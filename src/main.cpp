@@ -177,7 +177,7 @@ void handle_client(int client_socket, struct sockaddr_in client_addr) {
     // Log the request (thread-safe)
     {
         std::lock_guard<std::mutex> lock(log_mutex);
-        
+        // proper detailed logs of client on server
         std::cout << "╔═══════════════════════════════════════════════════\n";
         std::cout << "║ CLIENT CONNECTION [" << current_time << "]\n";
         std::cout << "║ IP: " << client_ip << ":" << client_port << "\n";
